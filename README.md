@@ -1,6 +1,11 @@
-# FitNex Fitness Website
+# FitNex Fitness Tracker Website
 
 FitNex is a responsive fitness tracker website built with HTML, CSS, Bootstrap, and JavaScript. It combines a fitness club website with an interactive workout dashboard where users can log workouts, set weekly goals, and track progress from the browser.
+
+## Links
+
+- Live Demo: https://fitness-website-tawny.vercel.app/
+- Repository: https://github.com/Fidel2197/Fitness-Website
 
 ## Overview
 
@@ -21,7 +26,7 @@ This project showcases a multi-page fitness website with a bold homepage, class 
 - Testimonial carousel
 - Contact form and contact information section
 - Social links for portfolio visibility
-- GitHub Pages-ready static files
+- Static deployment-ready files for Vercel, GitHub Pages, or similar hosts
 
 ## Technologies Used
 
