@@ -168,4 +168,295 @@ function navLinkClick() {
   }
 }
 
+/* FitNex workout tracker */
+(function () {
+  const workoutForm = document.getElementById("workoutForm");
+
+  if (!workoutForm) {
+    return;
+  }
+
+  const storageKey = "fitnex-tracker-v1";
+  const goalForm = document.getElementById("goalForm");
+  const clearWorkouts = document.getElementById("clearWorkouts");
+  const workoutList = document.getElementById("workoutList");
+  const elements = {
+    exerciseName: document.getElementById("exerciseName"),
+    exerciseType: document.getElementById("exerciseType"),
+    workoutDate: document.getElementById("workoutDate"),
+    workoutMinutes: document.getElementById("workoutMinutes"),
+    workoutCalories: document.getElementById("workoutCalories"),
+    weeklyMinutesGoal: document.getElementById("weeklyMinutesGoal"),
+    weeklyWorkoutGoal: document.getElementById("weeklyWorkoutGoal"),
+    totalWorkouts: document.getElementById("totalWorkouts"),
+    totalMinutes: document.getElementById("totalMinutes"),
+    totalCalories: document.getElementById("totalCalories"),
+    weeklyMinutesText: document.getElementById("weeklyMinutesText"),
+    weeklyWorkoutsText: document.getElementById("weeklyWorkoutsText"),
+    weeklyMinutesBar: document.getElementById("weeklyMinutesBar"),
+    weeklyWorkoutsBar: document.getElementById("weeklyWorkoutsBar"),
+    progressNote: document.getElementById("progressNote"),
+    trackerTip: document.getElementById("trackerTip"),
+    trackerFeedback: document.getElementById("trackerFeedback")
+  };
+
+  const state = {
+    workouts: [],
+    goals: {
+      weeklyMinutes: 150,
+      weeklyWorkouts: 4
+    }
+  };
+
+  function todayInputValue() {
+    const today = new Date();
+    today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+    return today.toISOString().slice(0, 10);
+  }
+
+  function readNumber(value, fallback) {
+    const number = Number(value);
+    return Number.isFinite(number) ? number : fallback;
+  }
+
+  function formatNumber(number) {
+    return new Intl.NumberFormat("en-US").format(number);
+  }
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, function (character) {
+      return {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[character];
+    });
+  }
+
+  function loadState() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey));
+
+      if (saved && Array.isArray(saved.workouts)) {
+        state.workouts = saved.workouts.filter(function (workout) {
+          return workout && workout.name && workout.date;
+        });
+      }
+
+      if (saved && saved.goals) {
+        state.goals.weeklyMinutes = Math.max(30, readNumber(saved.goals.weeklyMinutes, 150));
+        state.goals.weeklyWorkouts = Math.max(1, readNumber(saved.goals.weeklyWorkouts, 4));
+      }
+    } catch (error) {
+      state.workouts = [];
+    }
+  }
+
+  function saveState() {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(state));
+    } catch (error) {
+      setFeedback("Your browser blocked saving, but the tracker still works for this visit.");
+    }
+  }
+
+  function setFeedback(message) {
+    if (elements.trackerFeedback) {
+      elements.trackerFeedback.textContent = message || "";
+    }
+  }
+
+  function getWeekStart(date) {
+    const start = new Date(date);
+    start.setHours(0, 0, 0, 0);
+    start.setDate(start.getDate() - start.getDay());
+    return start;
+  }
+
+  function getThisWeekWorkouts() {
+    const weekStart = getWeekStart(new Date());
+
+    return state.workouts.filter(function (workout) {
+      return new Date(workout.date + "T00:00:00") >= weekStart;
+    });
+  }
+
+  function updateProgressBar(bar, percent) {
+    if (bar) {
+      bar.style.width = Math.min(100, Math.max(0, percent)) + "%";
+    }
+  }
+
+  function getTip(weekMinutes, weekWorkouts) {
+    if (state.workouts.length === 0) {
+      return "Log your first workout to get a progress-based suggestion.";
+    }
+
+    const latestWorkout = state.workouts
+      .slice()
+      .sort(function (a, b) {
+        return new Date(b.date) - new Date(a.date);
+      })[0];
+
+    if (weekMinutes >= state.goals.weeklyMinutes && weekWorkouts >= state.goals.weeklyWorkouts) {
+      return "You reached both weekly goals. Keep the habit steady and schedule recovery so the progress lasts.";
+    }
+
+    if (latestWorkout.type === "Strength") {
+      return "Your latest session was strength-based. Pair heavy days with recovery, protein, and good sleep.";
+    }
+
+    if (latestWorkout.type === "Cardio") {
+      return "Nice cardio work. Mix steady sessions with intervals to build endurance without burning out.";
+    }
+
+    if (latestWorkout.type === "Recovery") {
+      return "Recovery counts. Mobility, stretching, and rest help you come back stronger for the next session.";
+    }
+
+    return "Keep balancing effort and consistency. Small logged sessions still count toward a stronger week.";
+  }
+
+  function renderWorkoutList() {
+    if (!workoutList) {
+      return;
+    }
+
+    if (state.workouts.length === 0) {
+      workoutList.innerHTML = '<li class="empty-workouts">No workouts logged yet. Add one above to start tracking progress.</li>';
+      return;
+    }
+
+    const recentWorkouts = state.workouts
+      .slice()
+      .sort(function (a, b) {
+        return new Date(b.date) - new Date(a.date);
+      })
+      .slice(0, 6);
+
+    workoutList.innerHTML = recentWorkouts.map(function (workout) {
+      return [
+        '<li>',
+          '<div>',
+            '<strong>' + escapeHtml(workout.name) + '</strong>',
+            '<span>' + escapeHtml(workout.type) + ' | ' + escapeHtml(workout.minutes) + ' min | ' + escapeHtml(workout.calories) + ' cal | ' + escapeHtml(workout.date) + '</span>',
+          '</div>',
+          '<button class="delete-workout" type="button" data-id="' + escapeHtml(workout.id) + '">Delete</button>',
+        '</li>'
+      ].join("");
+    }).join("");
+  }
+
+  function render() {
+    const totalMinutes = state.workouts.reduce(function (total, workout) {
+      return total + readNumber(workout.minutes, 0);
+    }, 0);
+    const totalCalories = state.workouts.reduce(function (total, workout) {
+      return total + readNumber(workout.calories, 0);
+    }, 0);
+    const weekWorkouts = getThisWeekWorkouts();
+    const weekMinutes = weekWorkouts.reduce(function (total, workout) {
+      return total + readNumber(workout.minutes, 0);
+    }, 0);
+    const minutesPercent = (weekMinutes / state.goals.weeklyMinutes) * 100;
+    const workoutsPercent = (weekWorkouts.length / state.goals.weeklyWorkouts) * 100;
+    const remainingMinutes = Math.max(0, state.goals.weeklyMinutes - weekMinutes);
+    const remainingWorkouts = Math.max(0, state.goals.weeklyWorkouts - weekWorkouts.length);
+
+    elements.totalWorkouts.textContent = formatNumber(state.workouts.length);
+    elements.totalMinutes.textContent = formatNumber(totalMinutes);
+    elements.totalCalories.textContent = formatNumber(totalCalories);
+    elements.weeklyMinutesGoal.value = state.goals.weeklyMinutes;
+    elements.weeklyWorkoutGoal.value = state.goals.weeklyWorkouts;
+    elements.weeklyMinutesText.textContent = weekMinutes + " / " + state.goals.weeklyMinutes + " min";
+    elements.weeklyWorkoutsText.textContent = weekWorkouts.length + " / " + state.goals.weeklyWorkouts + " workouts";
+
+    updateProgressBar(elements.weeklyMinutesBar, minutesPercent);
+    updateProgressBar(elements.weeklyWorkoutsBar, workoutsPercent);
+    renderWorkoutList();
+
+    if (remainingMinutes === 0 && remainingWorkouts === 0) {
+      elements.progressNote.textContent = "Weekly goals complete. Strong work.";
+    } else {
+      elements.progressNote.textContent = remainingMinutes + " minutes and " + remainingWorkouts + " workouts left for this week.";
+    }
+
+    elements.trackerTip.textContent = getTip(weekMinutes, weekWorkouts.length);
+  }
+
+  elements.workoutDate.value = todayInputValue();
+  loadState();
+  render();
+
+  workoutForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = elements.exerciseName.value.trim();
+    const minutes = Math.max(1, readNumber(elements.workoutMinutes.value, 30));
+    const calories = Math.max(0, readNumber(elements.workoutCalories.value, 0));
+    const date = elements.workoutDate.value || todayInputValue();
+
+    if (!name) {
+      setFeedback("Add an exercise name first.");
+      return;
+    }
+
+    state.workouts.unshift({
+      id: Date.now().toString(),
+      name: name,
+      type: elements.exerciseType.value,
+      minutes: minutes,
+      calories: calories,
+      date: date
+    });
+
+    saveState();
+    workoutForm.reset();
+    elements.workoutDate.value = todayInputValue();
+    elements.workoutMinutes.value = 30;
+    elements.workoutCalories.value = 180;
+    setFeedback("Workout added. Your progress has been updated.");
+    render();
+  });
+
+  goalForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    state.goals.weeklyMinutes = Math.max(30, readNumber(elements.weeklyMinutesGoal.value, 150));
+    state.goals.weeklyWorkouts = Math.max(1, readNumber(elements.weeklyWorkoutGoal.value, 4));
+    saveState();
+    setFeedback("Goals saved. Progress targets updated.");
+    render();
+  });
+
+  workoutList.addEventListener("click", function (event) {
+    const deleteButton = event.target.closest(".delete-workout");
+
+    if (!deleteButton) {
+      return;
+    }
+
+    state.workouts = state.workouts.filter(function (workout) {
+      return workout.id !== deleteButton.dataset.id;
+    });
+    saveState();
+    setFeedback("Workout removed.");
+    render();
+  });
+
+  clearWorkouts.addEventListener("click", function () {
+    if (state.workouts.length === 0) {
+      setFeedback("There are no workouts to clear yet.");
+      return;
+    }
+
+    state.workouts = [];
+    saveState();
+    setFeedback("Workout log cleared.");
+    render();
+  });
+})();
+
 

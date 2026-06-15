@@ -44,7 +44,7 @@ File Name: responsive.css
     width: 75%;
   }
   .site-navbar ul li {
-    padding-right: 47px;
+    padding-right: 22px;
 }
 ul.email li {
 
@@ -376,4 +376,73 @@ ul.email li {
         overflow: visible;
     }
 
+}
+
+@media (max-width: 1199px) {
+  .tracker-header {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .tracker-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .fitness-tracker {
+    padding: 65px 0 55px;
+  }
+
+  .tracker-header .titlepage h2 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .tracker-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tracker-summary div,
+  .tracker-card {
+    border-radius: 10px;
+  }
+
+  .tracker-summary div,
+  .tracker-card {
+    padding: 18px;
+  }
+
+  .tracker-summary strong {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .tracker-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tracker-card-heading h3 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 575px) {
+  .tracker-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .tracker-input-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .workout-list li {
+    grid-template-columns: 1fr;
+  }
+
+  .delete-workout {
+    width: 100%;
+  }
 }

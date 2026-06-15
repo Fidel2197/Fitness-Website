@@ -16,9 +16,9 @@
   <!-- bootstrap css -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- style css -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=tracker">
   <!-- Responsive-->
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/responsive.css?v=tracker">
   <!-- fevicon -->
   <link rel="icon" href="images/icon.png" type="image/png" />
   <!-- Tweaks for older IEs-->
@@ -50,6 +50,7 @@
                   <li><a class="active" href="index.html">Home</a></li>
                   <li><a href="about.html">About</a></li>
                   <li><a href="services.html">Services</a></li>
+                  <li><a href="#tracker">Tracker</a></li>
                   <li><a href="testimonial.html">Testimonial</a></li>
                   <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -223,6 +224,139 @@
     </div>
   </div>
   <!-- end classes -->
+  <!-- tracker -->
+  <section class="fitness-tracker" id="tracker" aria-labelledby="tracker-title">
+    <div class="container">
+      <div class="tracker-header">
+        <div class="titlepage text_align_left">
+          <span class="tracker-kicker">Interactive Fitness Tools</span>
+          <h2 id="tracker-title">Workout Tracker</h2>
+          <p>Log workouts, set weekly goals, and watch your progress update instantly from one simple dashboard.</p>
+        </div>
+        <div class="tracker-summary" aria-label="Workout totals">
+          <div>
+            <span>Total Workouts</span>
+            <strong id="totalWorkouts">0</strong>
+          </div>
+          <div>
+            <span>Total Minutes</span>
+            <strong id="totalMinutes">0</strong>
+          </div>
+          <div>
+            <span>Total Calories</span>
+            <strong id="totalCalories">0</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="tracker-grid">
+        <form id="workoutForm" class="tracker-card tracker-form" aria-label="Workout logging form">
+          <div class="tracker-card-heading">
+            <h3>Log a Workout</h3>
+            <span>Today</span>
+          </div>
+          <label for="exerciseName">Exercise</label>
+          <input id="exerciseName" name="exerciseName" type="text" placeholder="Squats, treadmill, yoga" required>
+
+          <div class="tracker-input-row">
+            <div>
+              <label for="exerciseType">Type</label>
+              <select id="exerciseType" name="exerciseType">
+                <option value="Strength">Strength</option>
+                <option value="Cardio">Cardio</option>
+                <option value="Flexibility">Flexibility</option>
+                <option value="Sport">Sport</option>
+                <option value="Recovery">Recovery</option>
+              </select>
+            </div>
+            <div>
+              <label for="workoutDate">Date</label>
+              <input id="workoutDate" name="workoutDate" type="date" required>
+            </div>
+          </div>
+
+          <div class="tracker-input-row">
+            <div>
+              <label for="workoutMinutes">Minutes</label>
+              <input id="workoutMinutes" name="workoutMinutes" type="number" min="1" value="30" required>
+            </div>
+            <div>
+              <label for="workoutCalories">Calories</label>
+              <input id="workoutCalories" name="workoutCalories" type="number" min="0" value="180" required>
+            </div>
+          </div>
+
+          <button class="tracker-button" type="submit">Add Workout</button>
+          <p id="trackerFeedback" class="tracker-feedback" aria-live="polite"></p>
+        </form>
+
+        <form id="goalForm" class="tracker-card tracker-form" aria-label="Weekly fitness goals form">
+          <div class="tracker-card-heading">
+            <h3>Weekly Goals</h3>
+            <span>Plan</span>
+          </div>
+          <label for="weeklyMinutesGoal">Target minutes per week</label>
+          <input id="weeklyMinutesGoal" name="weeklyMinutesGoal" type="number" min="30" step="10" value="150" required>
+
+          <label for="weeklyWorkoutGoal">Target workouts per week</label>
+          <input id="weeklyWorkoutGoal" name="weeklyWorkoutGoal" type="number" min="1" value="4" required>
+
+          <button class="tracker-button tracker-button-dark" type="submit">Save Goals</button>
+        </form>
+
+        <div class="tracker-card progress-card" aria-label="Weekly progress">
+          <div class="tracker-card-heading">
+            <h3>Progress</h3>
+            <span>This Week</span>
+          </div>
+          <div class="progress-item">
+            <div>
+              <span>Workout Minutes</span>
+              <strong id="weeklyMinutesText">0 / 150 min</strong>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+              <span id="weeklyMinutesBar"></span>
+            </div>
+          </div>
+          <div class="progress-item">
+            <div>
+              <span>Workout Sessions</span>
+              <strong id="weeklyWorkoutsText">0 / 4 workouts</strong>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+              <span id="weeklyWorkoutsBar"></span>
+            </div>
+          </div>
+          <p class="progress-note" id="progressNote">Start logging workouts to build your weekly progress.</p>
+        </div>
+
+        <div class="tracker-card info-card" aria-label="Fitness information">
+          <div class="tracker-card-heading">
+            <h3>Fitness Info</h3>
+            <span>Guide</span>
+          </div>
+          <ul class="fitness-info-list">
+            <li><strong>Strength:</strong> build muscle with progressive overload and rest days.</li>
+            <li><strong>Cardio:</strong> improve endurance with steady sessions or intervals.</li>
+            <li><strong>Recovery:</strong> stretch, hydrate, sleep well, and track how your body feels.</li>
+          </ul>
+          <div class="tracker-tip">
+            <span>Smart Tip</span>
+            <p id="trackerTip">Log your first workout to get a progress-based suggestion.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tracker-card workout-history">
+        <div class="tracker-card-heading">
+          <h3>Recent Workouts</h3>
+          <button id="clearWorkouts" type="button">Clear Log</button>
+        </div>
+        <ul id="workoutList" class="workout-list" aria-live="polite"></ul>
+      </div>
+    </div>
+  </section>
+  <!-- end tracker -->
   <!-- choose -->
   <div class="choose">
     <div class="container">

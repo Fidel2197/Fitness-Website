@@ -1,15 +1,21 @@
 # FitNex Fitness Website
 
-FitNex is a responsive fitness club website built with HTML, CSS, Bootstrap, and JavaScript. It presents a polished front-end experience for gym classes, training services, testimonials, and contact information.
+FitNex is a responsive fitness tracker website built with HTML, CSS, Bootstrap, and JavaScript. It combines a fitness club website with an interactive workout dashboard where users can log workouts, set weekly goals, and track progress from the browser.
 
 ## Overview
 
-This project showcases a multi-page fitness website with a bold homepage, class highlights, service details, trainer-focused content, testimonials, and a contact page. It was built as a front-end portfolio project to practice responsive layouts, navigation, UI consistency, and basic interactivity.
+This project showcases a multi-page fitness website with a bold homepage, class highlights, service details, testimonials, contact information, and a front-end workout tracker. It was built as a portfolio project to practice responsive layouts, form handling, local state, dynamic DOM updates, and clean user flows.
 
 ## Features
 
 - Responsive multi-page layout
 - Homepage carousel with fitness-focused calls to action
+- Interactive workout logging form for exercise name, type, date, minutes, and calories
+- Weekly goal setting for workout minutes and number of sessions
+- Dynamic dashboard totals for workouts, minutes, calories, and weekly progress
+- Recent workout history with delete and clear-log controls
+- Browser localStorage persistence for saved workouts and goals
+- Fitness information section with progress-based guidance
 - About page for club mission and community details
 - Services page for progression, workouts, nutrition, and memberships
 - Testimonial carousel
@@ -22,7 +28,8 @@ This project showcases a multi-page fitness website with a bold homepage, class 
 - HTML5 for page structure
 - CSS3 for custom styling and responsive behavior
 - Bootstrap for layout utilities and components
-- JavaScript and jQuery for template interactions
+- JavaScript for form handling, localStorage, and live dashboard updates
+- jQuery for template interactions
 - Owl Carousel for carousel behavior
 - Font Awesome for social and interface icons
 
@@ -55,10 +62,10 @@ Open `index.html` in a browser. No build step or package installation is require
 ## Future Improvements
 
 - Add working form validation and submission handling
-- Add workout logging with local storage or a backend database
-- Add progress charts for workouts and fitness goals
+- Add backend accounts so users can sync workouts across devices
+- Add visual progress charts for workouts and fitness goals
 - Improve accessibility with stronger alt text and form labels
-- Deploy and link a live GitHub Pages version
+- Add automated tests for tracker calculations
 
 ## Author
 
