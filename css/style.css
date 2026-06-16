@@ -302,9 +302,20 @@ button {
     color: #fff;
     font-weight: bold;
     font-size: 42px;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     line-height: 42px;
 
+}
+
+.logo a::before {
+    content: "";
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    border-radius: 10px;
+    background: url("../images/fitnex-symbol.svg") center/cover no-repeat;
 }
 
 .navbar-area {
@@ -605,11 +616,11 @@ ul.email li i {
     display: none;
 }
 
-#ho_heal:hover .d_no {
+.ho_heal:hover .d_no {
     display: none;
 }
 
-#ho_heal:hover .d_bo {
+.ho_heal:hover .d_bo {
     display: block;
 }
 
@@ -945,6 +956,420 @@ ul.email li i {
 }
 
 /** end tracker **/
+
+.auth-nav-button {
+    min-height: 42px;
+    border: 0;
+    border-radius: 999px;
+    background: #e50444;
+    color: #fff;
+    padding: 0 18px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: ease-in all 0.25s;
+}
+
+.auth-nav-button:hover,
+.auth-nav-button:focus {
+    background: #111827;
+}
+
+.secondary-action {
+    border: 1px solid #e50444;
+    background: #fff;
+    color: #e50444;
+    cursor: pointer;
+}
+
+.secondary-action:hover {
+    background: #111827;
+    border-color: #111827;
+}
+
+.fitnex-command,
+.training-studio,
+.member-zone {
+    padding: 90px 0;
+}
+
+.fitnex-command {
+    background:
+        radial-gradient(circle at 8% 10%, rgba(229, 4, 68, 0.08), transparent 34%),
+        linear-gradient(135deg, #fff8fa, #f8fbff);
+}
+
+.command-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+    gap: 34px;
+    align-items: center;
+}
+
+.command-layout h2,
+.studio-heading h2,
+.member-card h2 {
+    color: #111827;
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 52px;
+}
+
+.command-layout p,
+.studio-heading p,
+.member-card p {
+    margin-top: 16px;
+    color: #4b5563;
+    max-width: 650px;
+}
+
+.command-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.command-dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    border: 1px solid #e3e7ee;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 24px 70px rgba(17, 24, 39, 0.12);
+    padding: 20px;
+}
+
+.command-card {
+    min-height: 150px;
+    border: 1px solid #eef1f5;
+    border-radius: 18px;
+    background: #ffffff;
+    padding: 22px;
+}
+
+.command-card.primary {
+    background: linear-gradient(135deg, #111827, #e50444);
+    color: #fff;
+}
+
+.command-card.wide {
+    grid-column: span 2;
+}
+
+.command-card span {
+    display: block;
+    color: inherit;
+    opacity: 0.74;
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.command-card strong {
+    display: block;
+    margin-top: 8px;
+    color: inherit;
+    font-size: 34px;
+    line-height: 38px;
+}
+
+.command-card p {
+    margin-top: 12px;
+    color: inherit;
+    opacity: 0.82;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.training-studio {
+    background: #111827;
+}
+
+.studio-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+    align-items: end;
+    margin-bottom: 28px;
+}
+
+.studio-heading h2,
+.training-studio .tracker-kicker {
+    color: #fff;
+}
+
+.studio-heading p {
+    color: #cbd5e1;
+    max-width: 500px;
+}
+
+.studio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.studio-grid article {
+    min-height: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 22px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03)),
+        #172033;
+    padding: 28px;
+}
+
+.studio-grid span {
+    display: inline-grid;
+    width: 52px;
+    height: 52px;
+    place-items: center;
+    border-radius: 16px;
+    background: #e50444;
+    color: #fff;
+    font-weight: 900;
+}
+
+.studio-grid h3 {
+    margin-top: 24px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.studio-grid p {
+    margin-top: 14px;
+    color: #cbd5e1;
+}
+
+.studio-grid a {
+    display: inline-flex;
+    margin-top: 22px;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.member-zone {
+    background: #f7f8fb;
+}
+
+.member-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+    align-items: center;
+    border: 1px solid #e1e5ea;
+    border-radius: 26px;
+    background:
+        linear-gradient(135deg, rgba(229, 4, 68, 0.08), rgba(17, 24, 39, 0.04)),
+        #ffffff;
+    box-shadow: 0 18px 50px rgba(17, 24, 39, 0.1);
+    padding: 34px;
+}
+
+.member-card .tracker-button {
+    max-width: 220px;
+    flex: 0 0 220px;
+}
+
+.fitnex-auth-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000000;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: rgba(17, 24, 39, 0.58);
+    backdrop-filter: blur(10px);
+}
+
+.fitnex-auth-modal[hidden] {
+    display: none;
+}
+
+.fitnex-auth-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(280px, 0.82fr) minmax(360px, 1fr);
+    width: min(940px, 100%);
+    max-height: calc(100vh - 48px);
+    overflow: auto;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.24);
+}
+
+.auth-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111827;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.auth-visual {
+    display: grid;
+    align-content: end;
+    min-height: 560px;
+    background:
+        linear-gradient(180deg, rgba(17, 24, 39, 0.08), rgba(17, 24, 39, 0.82)),
+        url("../images/banner.jpg") center / cover;
+    padding: 36px;
+}
+
+.auth-visual h2 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 46px;
+}
+
+.auth-visual p {
+    margin-top: 14px;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.auth-status-pill {
+    margin-top: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    padding: 10px 14px;
+    font-weight: 800;
+}
+
+.auth-workspace {
+    display: grid;
+    align-content: start;
+    gap: 18px;
+    padding: 34px;
+}
+
+.auth-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.auth-tabs button,
+.auth-footer-actions button {
+    min-height: 42px;
+    border: 1px solid #d9e0e8;
+    border-radius: 999px;
+    background: #fff;
+    color: #111827;
+    padding: 0 16px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.auth-tabs button.active {
+    border-color: #e50444;
+    background: #fff5f8;
+    color: #b40637;
+}
+
+.fitness-auth-form {
+    display: none;
+    gap: 14px;
+}
+
+.fitness-auth-form.active,
+.verify-form {
+    display: grid;
+}
+
+.fitness-auth-form label {
+    display: grid;
+    gap: 7px;
+    color: #4b5563;
+    font-weight: 800;
+}
+
+.fitness-auth-form input,
+.fitness-auth-form select {
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid #d9e0e8;
+    border-radius: 10px;
+    background: #fbfcfe;
+    padding: 0 14px;
+    color: #111827;
+}
+
+#fitnessCodeBox {
+    border-left: 4px solid #e50444;
+    border-radius: 10px;
+    background: #fff5f8;
+    padding: 14px;
+    color: #3f4651;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.auth-footer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid #edf0f5;
+    padding-top: 16px;
+}
+
+@media (max-width: 991px) {
+    .command-layout,
+    .studio-heading,
+    .member-card,
+    .fitnex-auth-card {
+        grid-template-columns: 1fr;
+    }
+
+    .studio-heading,
+    .member-card {
+        display: grid;
+    }
+
+    .studio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-visual {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 575px) {
+    .command-layout h2,
+    .studio-heading h2,
+    .member-card h2,
+    .auth-visual h2 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .command-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .command-card.wide {
+        grid-column: auto;
+    }
+
+    .member-card .tracker-button {
+        max-width: none;
+        flex: auto;
+    }
+}
 
 
 /** choose **/

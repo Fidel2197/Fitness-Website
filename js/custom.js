@@ -459,4 +459,220 @@ function navLinkClick() {
   });
 })();
 
+/* FitNex local account flow */
+(function () {
+  const modal = document.getElementById("fitnessAuthModal");
+  const openButtons = [
+    document.getElementById("openFitnessAuth"),
+    document.getElementById("openFitnessAuthHero"),
+    document.getElementById("openFitnessAuthMember")
+  ].filter(Boolean);
 
+  if (!modal || openButtons.length === 0) {
+    return;
+  }
+
+  const storageKey = "fitnex-account-v1";
+  const closeButton = document.getElementById("closeFitnessAuth");
+  const status = document.getElementById("fitnessAuthStatus");
+  const summary = document.getElementById("fitnessAuthSummary");
+  const createForm = document.getElementById("fitnessCreateForm");
+  const signInForm = document.getElementById("fitnessSignInForm");
+  const verifyForm = document.getElementById("fitnessVerifyForm");
+  const codeBox = document.getElementById("fitnessCodeBox");
+  const resendButton = document.getElementById("fitnessResendCode");
+  const signOutButton = document.getElementById("fitnessSignOut");
+  const tabs = document.querySelectorAll("[data-fitness-auth-tab]");
+
+  let account = loadAccount();
+
+  function loadAccount() {
+    try {
+      return JSON.parse(localStorage.getItem(storageKey)) || defaultAccount();
+    } catch (error) {
+      return defaultAccount();
+    }
+  }
+
+  function defaultAccount() {
+    return {
+      hasAccount: false,
+      name: "",
+      email: "",
+      passwordToken: "",
+      goal: "Build strength",
+      signedIn: false,
+      verified: false,
+      code: ""
+    };
+  }
+
+  function saveAccount() {
+    localStorage.setItem(storageKey, JSON.stringify(account));
+  }
+
+  function passwordToken(value) {
+    return btoa(unescape(encodeURIComponent(value))).slice(0, 28);
+  }
+
+  function makeCode() {
+    return String(Math.floor(100000 + Math.random() * 900000));
+  }
+
+  function firstName(name) {
+    return (name || "").trim().split(/\s+/)[0] || "Member";
+  }
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, function (character) {
+      return {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[character];
+    });
+  }
+
+  function setMode(mode) {
+    tabs.forEach(function (tab) {
+      tab.classList.toggle("active", tab.dataset.fitnessAuthTab === mode);
+    });
+    createForm.classList.toggle("active", mode === "create");
+    signInForm.classList.toggle("active", mode === "signin");
+  }
+
+  function renderAccount() {
+    const label = account.signedIn ? firstName(account.name) : "Sign In";
+    openButtons.forEach(function (button) {
+      if (button.id === "openFitnessAuth") {
+        button.textContent = account.signedIn ? label : "Sign In";
+      }
+    });
+
+    if (!account.hasAccount) {
+      status.textContent = "Not signed in";
+      summary.textContent = "Create an account or sign in to save your name, goal, and verified status locally.";
+      codeBox.textContent = "Create or sign in to receive a demo confirmation code.";
+      signOutButton.hidden = true;
+      return;
+    }
+
+    status.textContent = [
+      account.email,
+      account.signedIn ? "Signed in" : "Signed out",
+      account.verified ? "Verified" : "Verification needed"
+    ].join(" | ");
+    summary.textContent = account.signedIn
+      ? `${firstName(account.name)}, your current focus is ${account.goal}.`
+      : "Sign in to continue with your saved local FitNex profile.";
+    codeBox.innerHTML = account.verified
+      ? "Your local FitNex account is verified."
+      : `Demo confirmation email<br><strong>To:</strong> ${escapeHtml(account.email)}<br><strong>Code:</strong> ${escapeHtml(account.code || "Send a new code")}`;
+    signOutButton.hidden = !account.signedIn;
+  }
+
+  function openModal(mode) {
+    setMode(mode || (account.hasAccount ? "signin" : "create"));
+    renderAccount();
+    modal.hidden = false;
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+  }
+
+  openButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      openModal();
+    });
+  });
+
+  closeButton.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      setMode(tab.dataset.fitnessAuthTab);
+    });
+  });
+
+  createForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    account = {
+      hasAccount: true,
+      name: document.getElementById("fitnessCreateName").value.trim(),
+      email: document.getElementById("fitnessCreateEmail").value.trim().toLowerCase(),
+      passwordToken: passwordToken(document.getElementById("fitnessCreatePassword").value),
+      goal: document.getElementById("fitnessCreateGoal").value,
+      signedIn: true,
+      verified: false,
+      code: makeCode()
+    };
+    saveAccount();
+    renderAccount();
+  });
+
+  signInForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const email = document.getElementById("fitnessSignInEmail").value.trim().toLowerCase();
+    const token = passwordToken(document.getElementById("fitnessSignInPassword").value);
+
+    if (!account.hasAccount || account.email !== email || account.passwordToken !== token) {
+      codeBox.textContent = "That email or password does not match the local FitNex account.";
+      return;
+    }
+
+    account.signedIn = true;
+    if (!account.verified && !account.code) {
+      account.code = makeCode();
+    }
+    saveAccount();
+    renderAccount();
+  });
+
+  verifyForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const value = document.getElementById("fitnessVerificationCode").value.trim();
+
+    if (!account.hasAccount || !account.signedIn) {
+      codeBox.textContent = "Sign in before verifying the account.";
+      return;
+    }
+
+    if (value !== account.code) {
+      codeBox.textContent = "That code does not match. Use the demo code shown above.";
+      return;
+    }
+
+    account.verified = true;
+    account.code = "";
+    saveAccount();
+    renderAccount();
+  });
+
+  resendButton.addEventListener("click", function () {
+    if (!account.hasAccount) {
+      codeBox.textContent = "Create an account first.";
+      return;
+    }
+    account.code = makeCode();
+    account.verified = false;
+    saveAccount();
+    renderAccount();
+  });
+
+  signOutButton.addEventListener("click", function () {
+    account.signedIn = false;
+    saveAccount();
+    renderAccount();
+  });
+
+  renderAccount();
+})();

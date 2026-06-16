@@ -20,7 +20,7 @@
   <!-- Responsive-->
   <link rel="stylesheet" href="css/responsive.css?v=tracker">
   <!-- fevicon -->
-  <link rel="icon" href="images/icon.png" type="image/png" />
+  <link rel="icon" type="image/svg+xml" href="images/fitnex-symbol.svg" />
   <!-- Tweaks for older IEs-->
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   
@@ -53,6 +53,7 @@
                   <li><a href="#tracker">Tracker</a></li>
                   <li><a href="testimonial.html">Testimonial</a></li>
                   <li><a href="contact.html">Contact Us</a></li>
+                  <li><button class="auth-nav-button" id="openFitnessAuth" type="button">Sign In</button></li>
                 </ul>
                 <button class="nav-toggler">
                   <span></span>
@@ -82,12 +83,9 @@
                 <div class="col-md-9">
                   <div class="creative">
                     <h1>Fitness Club</h1>
-                    <p>Pain itself is something to be loved, connected with the matter of suffering. 
-                      Similarly strong, however, is the one who is blinded and does not see the annoyances 
-                      of rejection, the smallest accusations of hard labor! Will you open and embrace the burden for us, 
-                      even though it may be lacking?
+                    <p>Track workouts, set weekly goals, discover training programs, and keep your fitness routine organized from one clean dashboard.
                     </p>
-                    <a class="read_more" href="services.html">Learn More</a>
+                    <a class="read_more" href="#tracker">Start Tracking</a>
                     
                   </div>
                 </div>
@@ -172,6 +170,42 @@
     </div>
   </div>
   <!-- end about -->
+
+  <section class="fitnex-command" aria-labelledby="command-title">
+    <div class="container">
+      <div class="command-layout">
+        <div>
+          <span class="tracker-kicker">Fitness Command Center</span>
+          <h2 id="command-title">Plan, log, and improve without losing momentum.</h2>
+          <p>FitNex now works like a lightweight training workspace: users can sign in locally, track workouts, follow goals, review progress, and choose the next type of session.</p>
+          <div class="command-actions">
+            <a class="read_more" href="#tracker">Open Tracker</a>
+            <button class="read_more secondary-action" id="openFitnessAuthHero" type="button">Create Account</button>
+          </div>
+        </div>
+        <div class="command-dashboard" aria-label="FitNex dashboard preview">
+          <div class="command-card primary">
+            <span>Weekly Goal</span>
+            <strong>150 min</strong>
+            <p>Strength, cardio, and recovery split into trackable sessions.</p>
+          </div>
+          <div class="command-card">
+            <span>Next Focus</span>
+            <strong>Upper Body</strong>
+          </div>
+          <div class="command-card">
+            <span>Streak</span>
+            <strong>4 days</strong>
+          </div>
+          <div class="command-card wide">
+            <span>Smart Tip</span>
+            <p>Pair heavy lifting days with recovery and hydration to keep progress steady.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- classes -->
   <div class="classes">
     <div class="container">
@@ -187,7 +221,7 @@
           <div class="white_bg">
             <div class="row">
               <div class="col-md-4">
-                <div id="ho_heal" class="our_class text_align_center">
+                <div class="our_class text_align_center ho_heal">
                   <i class="d_no"><img src="images/cho3.3.png" alt="#" /></i>
                   <i class="d_bo"><img src="images/cho3.png" alt="#" /></i>
                   <h3>Progression</h3>
@@ -198,7 +232,7 @@
                 </div>
               </div>
               <div class="col-md-4">
-                <div id="ho_heal" class="our_class text_align_center">
+                <div class="our_class text_align_center ho_heal">
                   <i class="d_no"><img src="images/cho2.png" alt="#" /></i>
                   <i class="d_bo"><img src="images/cho2.2.png" alt="#" /></i>
                   <h3>Workout</h3>
@@ -208,7 +242,7 @@
                 </div>
               </div>
               <div class="col-md-4">
-                <div id="ho_heal" class="our_class text_align_center">
+                <div class="our_class text_align_center ho_heal">
                   <i class="d_no"><img src="images/cho1.png" alt="#" /></i>
                   <i class="d_bo"><img src="images/cho1.1.png" alt="#" /></i>
                   <h3>Nutrition</h3>
@@ -357,6 +391,52 @@
     </div>
   </section>
   <!-- end tracker -->
+
+  <section class="training-studio" aria-labelledby="studio-title">
+    <div class="container">
+      <div class="studio-heading">
+        <div>
+          <span class="tracker-kicker">Training Studio</span>
+          <h2 id="studio-title">Programs that feel easier to choose.</h2>
+        </div>
+        <p>Each path gives users a clear reason to start, a simple focus, and a next action instead of plain class cards.</p>
+      </div>
+      <div class="studio-grid">
+        <article>
+          <span>01</span>
+          <h3>Strength Builder</h3>
+          <p>Progressive lifting plan for squats, presses, deadlifts, and accessories.</p>
+          <a href="#tracker">Log strength</a>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Cardio Engine</h3>
+          <p>Intervals, endurance sessions, and weekly minutes to improve stamina.</p>
+          <a href="#tracker">Track cardio</a>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Recovery Reset</h3>
+          <p>Mobility, stretching, and low-impact days that keep training sustainable.</p>
+          <a href="#tracker">Plan recovery</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="member-zone" aria-labelledby="member-zone-title">
+    <div class="container">
+      <div class="member-card">
+        <div>
+          <span class="tracker-kicker">Member Account</span>
+          <h2 id="member-zone-title">Save your fitness profile before you train.</h2>
+          <p>Create a local FitNex account, verify it with a demo confirmation code, and return to your tracker with your name and goal saved in the browser.</p>
+        </div>
+        <button class="tracker-button" id="openFitnessAuthMember" type="button">Open Account</button>
+      </div>
+    </div>
+  </section>
+
   <!-- choose -->
   <div class="choose">
     <div class="container">
@@ -369,7 +449,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div id="fo" class="chose_text">
+          <div class="chose_text">
             <div class="cho_icon">
               <span>01</span>
             </div>
@@ -378,7 +458,7 @@
               <p>Get expert guidance at no extra cost to help you reach your fitness goals faster.</p>
             </div>
           </div>
-          <div id="fo" class="chose_text">
+          <div class="chose_text">
             <div class="cho_icon">
               <span>02</span>
             </div>
@@ -387,7 +467,7 @@
               <p>From high-energy cardio to strength-building workouts — we’ve got it all in one place.</p>
             </div>
           </div>
-          <div id="fo" class="chose_text">
+          <div class="chose_text">
             <div class="cho_icon">
               <span>03</span>
             </div>
@@ -537,6 +617,67 @@
     </div>
   </div>
   <!-- end contact -->
+  <div class="fitnex-auth-modal" id="fitnessAuthModal" hidden>
+    <section class="fitnex-auth-card" role="dialog" aria-modal="true" aria-labelledby="fitnessAuthTitle">
+      <button class="auth-close" id="closeFitnessAuth" type="button" aria-label="Close account panel">×</button>
+      <div class="auth-visual">
+        <span class="tracker-kicker">FitNex Account</span>
+        <h2 id="fitnessAuthTitle">Keep your training plan personal.</h2>
+        <p id="fitnessAuthSummary">Create an account or sign in to save your name, goal, and verified status locally.</p>
+        <div class="auth-status-pill" id="fitnessAuthStatus">Not signed in</div>
+      </div>
+      <div class="auth-workspace">
+        <div class="auth-tabs" role="tablist" aria-label="FitNex account mode">
+          <button class="active" type="button" data-fitness-auth-tab="create">Create account</button>
+          <button type="button" data-fitness-auth-tab="signin">Sign in</button>
+        </div>
+
+        <form class="fitness-auth-form active" id="fitnessCreateForm">
+          <label>Name
+            <input id="fitnessCreateName" type="text" placeholder="Your name" required>
+          </label>
+          <label>Email
+            <input id="fitnessCreateEmail" type="email" placeholder="you@example.com" required>
+          </label>
+          <label>Password
+            <input id="fitnessCreatePassword" type="password" placeholder="Create a password" minlength="6" required>
+          </label>
+          <label>Main Goal
+            <select id="fitnessCreateGoal">
+              <option>Build strength</option>
+              <option>Improve endurance</option>
+              <option>Lose weight</option>
+              <option>Stay consistent</option>
+            </select>
+          </label>
+          <button class="tracker-button" type="submit">Create Account</button>
+        </form>
+
+        <form class="fitness-auth-form" id="fitnessSignInForm">
+          <label>Email
+            <input id="fitnessSignInEmail" type="email" placeholder="you@example.com" required>
+          </label>
+          <label>Password
+            <input id="fitnessSignInPassword" type="password" placeholder="Password" required>
+          </label>
+          <button class="tracker-button tracker-button-dark" type="submit">Sign In</button>
+        </form>
+
+        <form class="fitness-auth-form verify-form" id="fitnessVerifyForm">
+          <p id="fitnessCodeBox">Create or sign in to receive a demo confirmation code.</p>
+          <label>Confirmation Code
+            <input id="fitnessVerificationCode" type="text" inputmode="numeric" placeholder="6-digit code">
+          </label>
+          <button class="tracker-button" type="submit">Verify Account</button>
+        </form>
+
+        <div class="auth-footer-actions">
+          <button id="fitnessResendCode" type="button">Resend Code</button>
+          <button id="fitnessSignOut" type="button">Sign Out</button>
+        </div>
+      </div>
+    </section>
+  </div>
   <!-- end footer -->
   <footer>
     <div class="footer">
