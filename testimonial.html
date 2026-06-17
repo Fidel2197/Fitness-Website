@@ -2,45 +2,28 @@
 <html lang="en">
 
 <head>
-   <!-- basic -->
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- mobile metas -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-   <!-- site metas -->
    <title>FitNex | Testimonials</title>
-   <meta name="keywords" content="">
-   <meta name="description" content="Read FitNex testimonials from trainers and gym members about motivation, discipline, and long-term fitness progress.">
-   <meta name="author" content="">
-   <!-- bootstrap css -->
+   <meta name="description" content="Read FitNex testimonials about coaching, discipline, consistency, and long-term fitness progress.">
    <link rel="stylesheet" href="css/bootstrap.min.css">
-   <!-- style css -->
    <link rel="stylesheet" href="css/style.css">
-   <!-- Responsive-->
    <link rel="stylesheet" href="css/responsive.css">
-   <!-- fevicon -->
    <link rel="icon" type="image/svg+xml" href="images/fitnex-symbol.svg" />
-   <!-- Tweaks for older IEs-->
    <link rel="stylesheet" href="css/owl.carousel.min.css">
-   <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
-<!-- body -->
 
 <body class="main-layout inner_page">
-   <!-- loader  -->
    <div class="loader_bg">
-      <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+      <div class="loader"><img src="images/loading.gif" alt="Loading" /></div>
    </div>
-   <!-- end loader -->
    <div class="full_bg">
-      <!-- header -->
       <header class="header-area">
          <div class="container-fluid">
             <div class="row d_flex">
-               <div class=" col-md-3 col-sm-3">
+               <div class="col-md-3 col-sm-3">
                   <div class="logo">
                      <a href="index.html">FitNex</a>
                   </div>
@@ -54,134 +37,172 @@
                            <li><a href="services.html">Services</a></li>
                            <li><a class="active" href="testimonial.html">Testimonial</a></li>
                            <li><a href="contact.html">Contact Us</a></li>
+                           <li><a class="auth-nav-button" href="index.html#account">Sign In</a></li>
                         </ul>
-                        <button class="nav-toggler">
+                        <button class="nav-toggler" type="button" aria-label="Toggle navigation">
                            <span></span>
                         </button>
                      </nav>
                   </div>
                </div>
-
             </div>
          </div>
       </header>
-      <!-- end header inner -->
    </div>
-   </div>
-   <!-- testimonial -->
-   <div class="testimonial">
-      <div class="clients_bg">
+
+   <main>
+      <section class="testimonial fitnex-testimonial-page">
+         <div class="clients_bg">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="titlepage text_align_left">
+                        <span class="fitnex-kicker">Member Stories</span>
+                        <h2>Real progress feels different when the plan is clear.</h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="myCarousel" class="carousel slide clients_banner" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+               <li data-target="#myCarousel" data-slide-to="1"></li>
+               <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container">
+                     <div class="carousel-caption tetxs">
+                        <div class="row d_flex">
+                           <div class="col-md-12">
+                              <div class="custom">
+                                 <div class="clint">
+                                    <i><img src="images/icon.png" alt="Trainer profile" /></i>
+                                    <h4>Joshua Atul<br><span>Personal Trainer</span></h4>
+                                 </div>
+                                 <p>FitNex gives members a training structure they can actually follow. The tracker keeps goals visible, and the coaching content helps each session feel intentional.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="carousel-caption tetxs">
+                        <div class="row d_flex">
+                           <div class="col-md-12">
+                              <div class="custom">
+                                 <div class="clint">
+                                    <i><img src="images/icon.png" alt="Manager profile" /></i>
+                                    <h4>Tola Aladekoba<br><span>Gym Manager</span></h4>
+                                 </div>
+                                 <p>The best part is how simple the experience feels. Members can see what they have done, what they are aiming for, and where to focus next.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="carousel-caption tetxs">
+                        <div class="row d_flex">
+                           <div class="col-md-12">
+                              <div class="custom">
+                                 <div class="clint">
+                                    <i><img src="images/icon.png" alt="Coach profile" /></i>
+                                    <h4>Tochukwu Anyanwu<br><span>Strength Coach</span></h4>
+                                 </div>
+                                 <p>Consistency is easier when members are not guessing. FitNex brings workouts, goals, sign-in, and progress into one clean experience.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+               <i class="fa fa-arrow-left" aria-hidden="true"></i>
+               <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+               <i class="fa fa-arrow-right" aria-hidden="true"></i>
+               <span class="sr-only">Next</span>
+            </a>
+         </div>
+      </section>
+
+      <section class="fitnex-page-section testimonial-proof">
          <div class="container">
-            <div class="row">
-               <div class="col-sm-12">
-                  <div class="titlepage text_align_left">
-                     <h2>Testimonials</h2>
+            <div class="fitnex-section-heading">
+               <span>PROOF POINTS</span>
+               <h2>What people notice first.</h2>
+            </div>
+            <div class="proof-grid">
+               <article>
+                  <strong>3</strong>
+                  <span>training focuses</span>
+                  <p>Strength, conditioning, and recovery are easy to separate or combine.</p>
+               </article>
+               <article>
+                  <strong>1</strong>
+                  <span>member profile</span>
+                  <p>The local account flow remembers a member&apos;s goal and status.</p>
+               </article>
+               <article>
+                  <strong>24/7</strong>
+                  <span>self-check</span>
+                  <p>The tracker gives members a quick progress snapshot whenever they return.</p>
+               </article>
+            </div>
+         </div>
+      </section>
+
+      <section class="fitnex-page-section result-wall">
+         <div class="container">
+            <div class="row d_flex">
+               <div class="col-md-5">
+                  <div class="fitnex-section-heading compact">
+                     <span>RESULT WALL</span>
+                     <h2>Small wins that keep people moving.</h2>
+                     <p>The project is designed to show how a fitness website can be more than a brochure: it can guide decisions and keep users engaged.</p>
+                  </div>
+               </div>
+               <div class="col-md-7">
+                  <div class="result-cards">
+                     <article>
+                        <h3>More Confidence</h3>
+                        <p>"I know what I am training today before I step into the gym."</p>
+                     </article>
+                     <article>
+                        <h3>Better Habits</h3>
+                        <p>"Seeing sessions and minutes makes consistency feel measurable."</p>
+                     </article>
+                     <article>
+                        <h3>Less Guesswork</h3>
+                        <p>"The service paths make it easier to choose a starting point."</p>
+                     </article>
                   </div>
                </div>
             </div>
          </div>
-      </div>
-      <!-- start slider section -->
-      <div id="myCarousel" class="carousel slide clients_banner" data-ride="carousel">
-         <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-         </ol>
-         <div class="carousel-inner">
-            <div class="carousel-item active">
-               <div class="container">
-                  <div class="carousel-caption tetxs">
-                     <div class="row d_flex">
-                        <div class="col-md-12">
-                           <div class="custom">
-                              <div class="clint">
-                                 <i><img src="images/icon.png" alt="#" /></i>
-                                 <h4>Joshua Atul<br><span>Personal Trainer</span></h4>
-                              </div>
-                              <p> Strength doesn’t come from doing what’s easy — it comes from pushing past your limits 
-                                 and overcoming the things you once thought you couldn’t. Every drop of sweat, every sore 
-                                 muscle, and every hard day adds up, building not just your body but your mind and spirit 
-                                 as well. It’s in those tough moments, when you feel like giving up, that real progress 
-                                 happens. Stay consistent, stay focused, and trust the process — because with time and 
-                                 effort, greatness will follow.</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="carousel-item">
-               <div class="container">
-                  <div class="carousel-caption tetxs">
-                     <div class="row d_flex">
-                        <div class="col-md-12">
-                           <div class="custom">
-                              <div class="clint">
-                                 <i><img src="images/icon.png" alt="#" /></i>
-                                 <h4>Tola Aladekoba<br><span>Gym manager</span></h4>
-                              </div>
-                              <p> Your fitness journey is not a race — it’s a lifelong commitment to 
-                                 becoming your best self. There will be days you feel tired, unmotivated, 
-                                 and full of doubt — but those are the days that matter most. 
-                                 Champions are not made when everything is easy; they are built when the odds are 
-                                 stacked against them and they refuse to give up. So lace up, show up, 
-                                 and put in the work, even when you don’t feel like it. 
-                                 The effort you give today is the victory you’ll wear tomorrow.  </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="carousel-item">
-               <div class="container">
-                  <div class="carousel-caption tetxs">
-                     <div class="row d_flex">
-                        <div class="col-md-12">
-                           <div class="custom">
-                              <div class="clint">
-                                 <i><img src="images/icon.png" alt="#" /></i>
-                                 <h4>Tochukwu Anyanwu<br><span>Personal Trainer</span></h4>
-                              </div>
-                              <p>Every time you step into the gym, you’re not just building muscle — you’re building discipline, 
-                      patience, and character. Progress doesn’t happen overnight, and greatness isn’t given — 
-                      it’s earned through sweat, struggle, and sacrifice. When your body wants to quit, 
-                      let your mind remind you why you started. The pain you feel today will become the 
-                      strength you rely on tomorrow. Keep pushing, keep grinding, and soon enough, 
-                      you’ll become everything you once dreamed of being.</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-         </a>
-         <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-         </a>
-      </div>
-   </div>
-   <!-- end testimonial -->
-   <!-- end footer -->
+      </section>
+   </main>
+
    <footer>
       <div class="footer">
          <div class="copyright">
             <div class="container">
                <div class="row d_flex">
                   <div class="col-md-8">
-                     <p>© 2024 All Rights Reserved. Designed by <a href="#"> FIDEL ANYANWU</a></p>
+                     <p>&copy; 2024 All Rights Reserved. Designed by <a href="#">FIDEL ANYANWU</a></p>
                   </div>
                   <div class="col-md-4">
                      <ul class="social_icon text_align_center">
-                        <li> <a href="https://www.linkedin.com/in/fidel-anyanwu-98a34124b/" target="_blank" rel="noopener"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                        </li>
-                        <li> <a href="https://github.com/Fidel2197" target="_blank" rel="noopener"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/fidel-anyanwu-98a34124b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li><a href="https://github.com/Fidel2197" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
                      </ul>
                   </div>
                </div>
@@ -189,13 +210,12 @@
          </div>
       </div>
    </footer>
-   <!-- end footer -->
-   <!-- Javascript files-->
+
    <script src="js/jquery.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
    <script src="js/jquery-3.0.0.min.js"></script>
    <script src="js/owl.carousel.min.js"></script>
    <script src="js/custom.js"></script>
-
 </body>
+
 </html>

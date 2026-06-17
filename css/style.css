@@ -667,7 +667,7 @@ ul.email li i {
     color: #e50444;
     font-size: 14px;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 0;
     text-transform: uppercase;
 }
 
@@ -697,7 +697,7 @@ ul.email li i {
     color: #6b7280;
     font-size: 12px;
     font-weight: 800;
-    letter-spacing: 0.7px;
+    letter-spacing: 0;
     text-transform: uppercase;
 }
 
@@ -1629,6 +1629,624 @@ ul.top_infomation li p {
 }
 
 /** end contact **/
+
+/** FitNex expanded inner pages **/
+
+.fitnex-kicker {
+    display: block;
+    margin-bottom: 12px;
+    color: #e50444;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.fitnex-lede {
+    max-width: 760px;
+    margin: 18px auto 0;
+    color: #4b5563;
+}
+
+.fitnex-inner-hero {
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.9) 44%, rgba(255, 255, 255, 0.62) 100%),
+        url("../images/banner.jpg") center / cover;
+}
+
+.fitnex-inner-hero .titlepage h2,
+.service-intro .titlepage h2,
+.fitnex-testimonial-page .titlepage h2,
+.contact-upgrade .titlepage h2 {
+    font-size: 46px;
+    line-height: 52px;
+}
+
+.fitnex-inner-hero .titlepage p + p {
+    margin-top: 18px;
+}
+
+.fitnex-feature-image figure {
+    overflow: hidden;
+    border-radius: 8px 0 0 8px;
+    box-shadow: 0 24px 60px rgba(17, 24, 39, 0.16);
+}
+
+.fitnex-feature-image figure img {
+    display: block;
+}
+
+.fitnex-page-section {
+    padding: 90px 0;
+    background: #fff;
+}
+
+.fitnex-page-section:nth-of-type(even) {
+    background: #f7f8fb;
+}
+
+.fitnex-section-heading {
+    max-width: 760px;
+    margin-bottom: 34px;
+}
+
+.fitnex-section-heading.compact {
+    margin-bottom: 0;
+}
+
+.fitnex-section-heading span,
+.coach-card span,
+.service-card-grid article span,
+.consultation-card span {
+    display: block;
+    margin-bottom: 10px;
+    color: #e50444;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.fitnex-section-heading h2,
+.coach-card h2,
+.consultation-card h2 {
+    color: #111827;
+    font-size: 38px;
+    line-height: 44px;
+    font-weight: 800;
+}
+
+.fitnex-section-heading p,
+.coach-card p,
+.consultation-card p {
+    margin-top: 14px;
+    color: #4b5563;
+}
+
+.fitnex-info-grid,
+.service-card-grid,
+.program-steps,
+.proof-grid,
+.support-grid,
+.rhythm-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.fitnex-info-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.fitnex-info-grid article,
+.program-steps article,
+.proof-grid article,
+.support-grid article,
+.rhythm-grid div,
+.result-cards article,
+.contact-side-card,
+.contact-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 16px 40px rgba(17, 24, 39, 0.08);
+}
+
+.fitnex-info-grid article,
+.program-steps article,
+.proof-grid article,
+.support-grid article,
+.rhythm-grid div,
+.result-cards article {
+    padding: 28px;
+}
+
+.fitnex-info-grid strong,
+.program-steps strong,
+.proof-grid strong {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    background: #111827;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.fitnex-info-grid h3,
+.program-steps h3,
+.proof-grid h3,
+.support-grid h3,
+.rhythm-grid h3,
+.result-cards h3 {
+    color: #111827;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 800;
+}
+
+.fitnex-info-grid p,
+.program-steps p,
+.proof-grid p,
+.support-grid p,
+.rhythm-grid p,
+.result-cards p {
+    margin-top: 10px;
+    color: #4b5563;
+}
+
+.coach-standard {
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.62)),
+        url("../images/chose.png") center / cover;
+}
+
+.coach-card {
+    padding: 42px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.18);
+}
+
+.coach-list {
+    display: grid;
+    gap: 16px;
+}
+
+.coach-list p {
+    position: relative;
+    padding: 18px 18px 18px 58px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #111827;
+    font-weight: 800;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.14);
+}
+
+.coach-list p::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #e50444;
+}
+
+.member-rhythm {
+    background: #fff;
+}
+
+.rhythm-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.service-intro {
+    padding-bottom: 70px;
+}
+
+.service-class-grid {
+    overflow: hidden;
+    padding: 52px 30px 28px;
+    border: 1px solid #edf0f3;
+    box-shadow: 0 24px 60px rgba(17, 24, 39, 0.08);
+}
+
+.service-class-grid .our_class {
+    min-height: 315px;
+    margin-bottom: 0;
+    padding: 30px 26px;
+    border-radius: 8px;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.service-class-grid .our_class:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(17, 24, 39, 0.1);
+}
+
+.service-roadmap {
+    background: #f7f8fb;
+}
+
+.service-card-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.service-card-grid article {
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(17, 24, 39, 0.08);
+}
+
+.service-card-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.service-card-grid article div {
+    padding: 24px;
+}
+
+.service-card-grid h3 {
+    color: #111827;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 800;
+}
+
+.service-card-grid p {
+    margin-top: 10px;
+    color: #4b5563;
+}
+
+.fitnex-choose {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.78)),
+        url("../images/chose.png") center right / cover;
+}
+
+.fitnex-choose .chose_text {
+    align-items: flex-start;
+    max-width: 980px;
+    margin-top: 28px;
+    padding: 22px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 16px 40px rgba(17, 24, 39, 0.08);
+}
+
+.fitnex-choose .cho_icon {
+    width: 84px;
+    height: 84px;
+    margin-right: 26px;
+    border: 0;
+    border-radius: 8px;
+    background: #111827;
+    color: #fff;
+    font-size: 24px;
+    line-height: 84px;
+}
+
+.fitnex-choose .seren h3 {
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.fitnex-choose .seren p {
+    max-width: 780px;
+    margin-top: 8px;
+    color: #4b5563;
+}
+
+.program-steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.program-steps strong {
+    width: auto;
+    padding: 0 14px;
+    background: #e50444;
+}
+
+.fitnex-testimonial-page {
+    padding-bottom: 40px;
+}
+
+.fitnex-testimonial-page .clients_bg {
+    padding: 70px 0 28px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.66)),
+        url("../images/banner.jpg") center / cover;
+}
+
+.fitnex-testimonial-page .custom p {
+    max-width: 900px;
+    margin: 26px auto 0;
+    padding: 42px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(17, 24, 39, 0.1);
+}
+
+.fitnex-testimonial-page .clint {
+    border-radius: 8px;
+    background: #111827;
+}
+
+.testimonial-proof {
+    background: #f7f8fb;
+}
+
+.proof-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.proof-grid article {
+    background: linear-gradient(180deg, #fff, #fdf3f6);
+}
+
+.proof-grid strong {
+    width: auto;
+    padding: 0 14px;
+    background: #e50444;
+}
+
+.proof-grid span {
+    display: block;
+    color: #111827;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
+.result-wall {
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.64)),
+        url("../images/test.png") center / cover;
+}
+
+.result-wall .fitnex-section-heading h2,
+.result-wall .fitnex-section-heading p {
+    color: #fff;
+}
+
+.result-cards {
+    display: grid;
+    gap: 18px;
+}
+
+.contact-upgrade {
+    padding-bottom: 80px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.78)),
+        url("../images/banner.jpg") center / cover;
+}
+
+.contact-layout {
+    align-items: stretch;
+}
+
+.contact-card {
+    padding: 34px;
+}
+
+.contact-card .form_control,
+.contact-card .form_cont {
+    width: 100%;
+    margin-bottom: 22px;
+    border: 1px solid #d9dee6;
+    border-radius: 8px;
+    background: #fff;
+    color: #111827;
+    font-size: 16px;
+}
+
+.contact-card .form_control {
+    height: 56px;
+    padding: 0 16px;
+}
+
+.contact-card .form_cont {
+    height: 140px;
+    margin-top: 0;
+    padding: 16px;
+    resize: vertical;
+}
+
+.contact-card .send_btn {
+    max-width: 220px;
+    height: 58px;
+    line-height: 58px;
+    border-radius: 8px;
+    background: #e50444;
+}
+
+.contact-card .send_btn:hover {
+    background: #111827;
+}
+
+.contact-side-card {
+    height: 100%;
+    padding: 34px;
+    background: #111827;
+}
+
+.contact-side-card h3,
+.contact-side-card p,
+.contact-side-card span,
+.contact-response strong {
+    color: #fff;
+}
+
+.contact-side-card ul.top_infomation {
+    padding-top: 26px;
+}
+
+.contact-side-card ul.top_infomation li a {
+    align-items: flex-start;
+    padding: 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-side-card ul.top_infomation li span {
+    color: #fff;
+}
+
+.contact-side-card ul.top_infomation li p {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.contact-response {
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 8px;
+    background: rgba(229, 4, 68, 0.22);
+}
+
+.contact-support {
+    background: #f7f8fb;
+}
+
+.support-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.consultation-strip {
+    background: #fff;
+}
+
+.consultation-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 42px;
+    border-radius: 8px;
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, 0.96), rgba(17, 24, 39, 0.76)),
+        url("../images/chose.png") center / cover;
+    box-shadow: 0 22px 60px rgba(17, 24, 39, 0.16);
+}
+
+.consultation-card h2,
+.consultation-card p {
+    color: #fff;
+}
+
+.consultation-card .read_more {
+    flex: 0 0 auto;
+    margin: 0;
+    background: #fff;
+    color: #111827;
+}
+
+.consultation-card .read_more:hover {
+    background: #e50444;
+    color: #fff;
+}
+
+@media (max-width: 1199px) {
+    .fitnex-info-grid,
+    .service-card-grid,
+    .program-steps,
+    .proof-grid,
+    .support-grid,
+    .rhythm-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fitnex-inner-hero .titlepage h2,
+    .service-intro .titlepage h2,
+    .fitnex-testimonial-page .titlepage h2,
+    .contact-upgrade .titlepage h2 {
+        font-size: 40px;
+        line-height: 46px;
+    }
+}
+
+@media (max-width: 991px) {
+    .fitnex-page-section {
+        padding: 70px 0;
+    }
+
+    .fitnex-section-heading.compact {
+        margin-bottom: 30px;
+    }
+
+    .fitnex-choose .chose_text {
+        display: flex;
+    }
+
+    .contact-side-card {
+        margin-top: 26px;
+    }
+
+    .consultation-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767px) {
+    .fitnex-inner-hero .titlepage h2,
+    .service-intro .titlepage h2,
+    .fitnex-testimonial-page .titlepage h2,
+    .contact-upgrade .titlepage h2,
+    .fitnex-section-heading h2,
+    .coach-card h2,
+    .consultation-card h2 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .fitnex-info-grid,
+    .service-card-grid,
+    .program-steps,
+    .proof-grid,
+    .support-grid,
+    .rhythm-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fitnex-info-grid article,
+    .program-steps article,
+    .proof-grid article,
+    .support-grid article,
+    .rhythm-grid div,
+    .result-cards article,
+    .contact-card,
+    .contact-side-card,
+    .coach-card,
+    .consultation-card {
+        padding: 24px;
+    }
+
+    .fitnex-choose .chose_text {
+        display: block;
+    }
+
+    .fitnex-choose .cho_icon {
+        margin: 0 0 18px;
+    }
+
+    .contact-card .send_btn,
+    .consultation-card .read_more {
+        max-width: 100%;
+        width: 100%;
+    }
+}
 
 /** footer **/
 

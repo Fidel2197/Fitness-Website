@@ -2,43 +2,28 @@
 <html lang="en">
 
 <head>
-   <!-- basic -->
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- mobile metas -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-   <!-- site metas -->
    <title>FitNex | Contact</title>
-   <meta name="keywords" content="">
-   <meta name="description" content="Contact FitNex for fitness club questions, workout support, and training information.">
-   <meta name="author" content="">
-   <!-- bootstrap css -->
+   <meta name="description" content="Contact FitNex for training questions, workout support, and membership information.">
    <link rel="stylesheet" href="css/bootstrap.min.css">
-   <!-- style css -->
    <link rel="stylesheet" href="css/style.css">
-   <!-- Responsive-->
    <link rel="stylesheet" href="css/responsive.css">
-   <!-- fevicon -->
    <link rel="icon" type="image/svg+xml" href="images/fitnex-symbol.svg" />
-   <!-- Tweaks for older IEs-->
    <link rel="stylesheet" href="css/owl.carousel.min.css">
-   
 </head>
-<!-- body -->
 
 <body class="main-layout inner_page">
-   <!-- loader  -->
    <div class="loader_bg">
-      <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+      <div class="loader"><img src="images/loading.gif" alt="Loading" /></div>
    </div>
-   <!-- end loader -->
    <div class="full_bg">
-      <!-- header -->
       <header class="header-area">
          <div class="container-fluid">
             <div class="row d_flex">
-               <div class=" col-md-3 col-sm-3">
+               <div class="col-md-3 col-sm-3">
                   <div class="logo">
                      <a href="index.html">FitNex</a>
                   </div>
@@ -52,80 +37,136 @@
                            <li><a href="services.html">Services</a></li>
                            <li><a href="testimonial.html">Testimonial</a></li>
                            <li><a class="active" href="contact.html">Contact Us</a></li>
+                           <li><a class="auth-nav-button" href="index.html#account">Sign In</a></li>
                         </ul>
-                        <button class="nav-toggler">
+                        <button class="nav-toggler" type="button" aria-label="Toggle navigation">
                            <span></span>
                         </button>
                      </nav>
                   </div>
                </div>
-
             </div>
          </div>
       </header>
-      <!-- end header inner -->
    </div>
-   </div>
-   <!-- contact -->
-   <div class="contact">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12 ">
-               <div class="titlepage text_align_center">
-                  <h2>Get In Touch</h2>
+
+   <main>
+      <section class="contact contact-upgrade">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_center">
+                     <span class="fitnex-kicker">Contact FitNex</span>
+                     <h2>Tell us what you are training for.</h2>
+                     <p class="fitnex-lede">Use the form for questions, plan requests, membership details, or help choosing the best starting point.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row contact-layout">
+               <div class="col-md-7">
+                  <form id="request" class="main_form contact-card">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <input class="form_control" placeholder="Name" type="text" name="name">
+                        </div>
+                        <div class="col-md-6">
+                           <input class="form_control" placeholder="Email" type="email" name="email">
+                        </div>
+                        <div class="col-md-6">
+                           <input class="form_control" placeholder="Phone number" type="tel" name="phone">
+                        </div>
+                        <div class="col-md-6">
+                           <select class="form_control" name="topic" aria-label="Contact topic">
+                              <option value="">Training focus</option>
+                              <option>Strength</option>
+                              <option>Conditioning</option>
+                              <option>Nutrition</option>
+                              <option>Membership</option>
+                           </select>
+                        </div>
+                        <div class="col-md-12">
+                           <textarea class="form_cont" placeholder="What do you want help with?" name="message"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                           <button class="send_btn" type="submit">Send Message</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div class="col-md-5">
+                  <div class="contact-side-card">
+                     <h3>Fastest ways to reach us</h3>
+                     <ul class="top_infomation">
+                        <li>
+                           <a href="tel:+13372499136"><i><img src="images/call.png" alt="" /></i>
+                              <p><span>Phone</span><br>+1 337 249 9136</p>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="mailto:fanyanwu@mcneese.edu"><i><img src="images/mail.png" alt="" /></i>
+                              <p><span>Email</span><br>fanyanwu@mcneese.edu</p>
+                           </a>
+                        </li>
+                     </ul>
+                     <div class="contact-response">
+                        <strong>Typical response</strong>
+                        <p>Training questions are usually reviewed within one business day.</p>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
-         <div class="row">
-            <div class="col-md-6">
-               <form id="request" class="main_form">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <input class="form_control" placeholder="Name" type="text" name="name">
-                     </div>
-                     <div class="col-md-12">
-                        <input class="form_control" placeholder="Email" type="email" name="email">
-                     </div>
-                     <div class="col-md-12">
-                        <input class="form_control" placeholder="Phone number" type="tel" name="phone">
-                     </div>
-                     <div class="col-md-12">
-                        <textarea class="form_cont" placeholder="Message" name="message"></textarea>
-                     </div>
-                     <div class="col-md-12">
-                        <button class="send_btn">Send</button>
-                     </div>
-                  </div>
-               </form>
+      </section>
+
+      <section class="fitnex-page-section contact-support">
+         <div class="container">
+            <div class="fitnex-section-heading">
+               <span>SUPPORT OPTIONS</span>
+               <h2>Pick the lane that fits the question.</h2>
             </div>
-            <div class="col-md-4 offset-md-1">
-               <ul class="top_infomation">
-                  <li><a href="javascript:void(0)"><i><img src="images/call.png" alt="#" /></i>
-                        <p><span>Phone Number :</span> <br>+1 337 249 9136</p>
-                     </a></li>
-                  <li><a href="javascript:void(0)"><i><img src="images/mail.png" alt="#" /></i>
-                        <p><span>Email :</span> <br>fanyanwu@mcneese.edu</p>
-                     </a></li>
-               </ul>
+            <div class="support-grid">
+               <article>
+                  <h3>Training Plan</h3>
+                  <p>Ask for help choosing a weekly split, adjusting volume, or getting unstuck.</p>
+               </article>
+               <article>
+                  <h3>Goal Review</h3>
+                  <p>Share your current focus and get a clearer first step for the next seven days.</p>
+               </article>
+               <article>
+                  <h3>Membership</h3>
+                  <p>Use this path for schedule questions, account help, or general FitNex details.</p>
+               </article>
             </div>
          </div>
-      </div>
-   </div>
-   <!-- end contact -->
-   <!-- end footer -->
+      </section>
+
+      <section class="fitnex-page-section consultation-strip">
+         <div class="container">
+            <div class="consultation-card">
+               <div>
+                  <span>READY TO START?</span>
+                  <h2>Create your FitNex member focus.</h2>
+                  <p>Sign in on the home page, save your goal, and begin tracking your training week.</p>
+               </div>
+               <a class="read_more" href="index.html#account">Open Sign In</a>
+            </div>
+         </div>
+      </section>
+   </main>
+
    <footer>
       <div class="footer">
          <div class="copyright">
             <div class="container">
                <div class="row d_flex">
                   <div class="col-md-8">
-                     <p>© 2024 All Rights Reserved. Designed by <a href="#"> FIDEL ANYANWU</a></p>
+                     <p>&copy; 2024 All Rights Reserved. Designed by <a href="#">FIDEL ANYANWU</a></p>
                   </div>
                   <div class="col-md-4">
                      <ul class="social_icon text_align_center">
-                        <li> <a href="https://www.linkedin.com/in/fidel-anyanwu-98a34124b/" target="_blank" rel="noopener"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                        </li>
-                        <li> <a href="https://github.com/Fidel2197" target="_blank" rel="noopener"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/fidel-anyanwu-98a34124b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li><a href="https://github.com/Fidel2197" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
                      </ul>
                   </div>
                </div>
@@ -133,14 +174,12 @@
          </div>
       </div>
    </footer>
-   <!-- end footer -->
-   <!-- Javascript files-->
+
    <script src="js/jquery.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
    <script src="js/jquery-3.0.0.min.js"></script>
    <script src="js/owl.carousel.min.js"></script>
    <script src="js/custom.js"></script>
-
 </body>
 
 </html>

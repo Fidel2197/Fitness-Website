@@ -9,7 +9,7 @@ FitNex is a responsive fitness tracker website built with HTML, CSS, Bootstrap, 
 
 ## Overview
 
-This project showcases a multi-page fitness website with a bold homepage, class highlights, service details, testimonials, contact information, front-end account states, and a workout tracker. It was built as a portfolio project to practice responsive layouts, form handling, local state, dynamic DOM updates, and clean user flows.
+This project showcases a multi-page fitness website with a bold homepage, expanded about/services/testimonials/contact pages, account-style states, and a workout tracker. It was built as a portfolio project to practice responsive layouts, form handling, local state, dynamic DOM updates, and clean user flows.
 
 ## Features
 
@@ -25,10 +25,10 @@ This project showcases a multi-page fitness website with a bold homepage, class 
 - Training studio section for strength, conditioning, and recovery paths
 - Member zone section for goals, check-ins, and progress review
 - Fitness information section with progress-based guidance
-- About page for club mission and community details
-- Services page for progression, workouts, nutrition, and memberships
-- Testimonial carousel
-- Contact form and contact information section
+- About page with method, coaching standard, and member rhythm sections
+- Services page with training paths, why-it-works content, and a starter plan
+- Testimonial carousel with proof points and result cards
+- Contact page with topic selector, support options, and sign-in call to action
 - Social links for portfolio visibility
 - Static deployment-ready files for Vercel, GitHub Pages, or similar hosts
 

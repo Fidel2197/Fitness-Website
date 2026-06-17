@@ -589,6 +589,10 @@ function navLinkClick() {
     });
   });
 
+  if (window.location.hash === "#account") {
+    openModal();
+  }
+
   closeButton.addEventListener("click", closeModal);
 
   modal.addEventListener("click", function (event) {
