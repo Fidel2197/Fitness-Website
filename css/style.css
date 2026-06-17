@@ -2310,6 +2310,695 @@ ul.social_icon li a:hover {
 
 /** end footer **/
 
+/** FitNex modern inner-page overhaul **/
+
+.fitnex-modern-page {
+    background: #f7f8fb;
+}
+
+.fitnex-page-hero {
+    position: relative;
+    padding: 105px 0 72px;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, 0.92), rgba(17, 24, 39, 0.62)),
+        url("../images/banner.jpg") center / cover;
+}
+
+.fitnex-page-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 120px;
+    background: linear-gradient(180deg, rgba(247, 248, 251, 0), #f7f8fb);
+    pointer-events: none;
+}
+
+.services-hero {
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, 0.94), rgba(229, 4, 68, 0.58)),
+        url("../images/chose.png") center / cover;
+}
+
+.testimonial-hero {
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, 0.95), rgba(17, 24, 39, 0.58)),
+        url("../images/test.png") center / cover;
+}
+
+.contact-hero {
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, 0.94), rgba(17, 24, 39, 0.6)),
+        url("../images/banner.jpg") center / cover;
+}
+
+.fitnex-hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+    gap: 34px;
+    align-items: center;
+}
+
+.fitnex-hero-copy {
+    max-width: 760px;
+}
+
+.fitnex-hero-copy h1 {
+    color: #fff;
+    font-size: 58px;
+    line-height: 64px;
+    font-weight: 900;
+}
+
+.fitnex-hero-copy p {
+    max-width: 680px;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.fitnex-hero-copy .fitnex-kicker,
+.dark-feature-section .fitnex-kicker,
+.testimonial-hero .fitnex-kicker,
+.contact-hero .fitnex-kicker,
+.services-hero .fitnex-kicker {
+    color: #fff;
+}
+
+.fitnex-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.fitnex-hero-actions .read_more,
+.contact-cta-card .read_more {
+    margin: 0;
+    border-radius: 8px;
+}
+
+.secondary-action {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.secondary-action:hover {
+    background: #fff;
+    color: #111827;
+}
+
+.fitnex-hero-card,
+.service-hero-board,
+.testimonial-scoreboard,
+.contact-quick-panel {
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(10px);
+}
+
+.fitnex-hero-card {
+    overflow: hidden;
+}
+
+.fitnex-hero-card img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-card-note {
+    padding: 22px;
+    background: #fff;
+}
+
+.hero-card-note strong,
+.hero-card-note span {
+    display: block;
+}
+
+.hero-card-note strong {
+    color: #111827;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.hero-card-note span {
+    margin-top: 4px;
+    color: #4b5563;
+}
+
+.fitnex-hero-stats {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    max-width: 780px;
+    margin-top: 34px;
+}
+
+.fitnex-hero-stats div {
+    padding: 18px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    backdrop-filter: blur(10px);
+}
+
+.fitnex-hero-stats strong,
+.fitnex-hero-stats span {
+    display: block;
+}
+
+.fitnex-hero-stats strong {
+    font-size: 34px;
+    line-height: 38px;
+    font-weight: 900;
+}
+
+.fitnex-hero-stats span {
+    margin-top: 4px;
+    color: rgba(255, 255, 255, 0.82);
+    font-weight: 800;
+}
+
+.modern-section {
+    padding: 96px 0;
+    background: #f7f8fb;
+}
+
+.modern-section:nth-of-type(odd) {
+    background: #fff;
+}
+
+.modern-heading {
+    max-width: 760px;
+    margin-bottom: 34px;
+}
+
+.modern-heading.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.modern-heading h2,
+.story-copy h2,
+.plan-builder-layout h2,
+.proof-layout h2,
+.contact-form-panel h2,
+.contact-cta-card h2,
+.dark-feature-grid h2 {
+    color: #111827;
+    font-size: 42px;
+    line-height: 48px;
+    font-weight: 900;
+}
+
+.story-copy p,
+.plan-builder-layout p,
+.proof-layout p,
+.contact-cta-card p {
+    margin-top: 16px;
+    color: #4b5563;
+}
+
+.story-layout,
+.plan-builder-layout,
+.proof-layout,
+.contact-workspace,
+.dark-feature-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    gap: 34px;
+    align-items: center;
+}
+
+.story-panel {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 24px 60px rgba(17, 24, 39, 0.14);
+}
+
+.story-panel img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    display: block;
+}
+
+.modern-card-grid,
+.story-card-grid,
+.service-showcase-grid {
+    display: grid;
+    gap: 22px;
+}
+
+.modern-card-grid.three,
+.story-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.modern-card-grid article,
+.story-card-grid article,
+.service-showcase-grid article,
+.proof-list p,
+.route-list article {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(17, 24, 39, 0.08);
+}
+
+.modern-card-grid article,
+.story-card-grid article,
+.proof-list p,
+.route-list article {
+    padding: 28px;
+}
+
+.modern-card-grid article span,
+.service-showcase-grid article span,
+.proof-list strong,
+.route-list strong {
+    display: block;
+    color: #e50444;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.modern-card-grid h3,
+.service-showcase-grid h3,
+.story-card-grid strong,
+.route-list strong {
+    color: #111827;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 900;
+}
+
+.modern-card-grid p,
+.service-showcase-grid p,
+.story-card-grid p,
+.proof-list span,
+.route-list span {
+    margin-top: 10px;
+    color: #4b5563;
+}
+
+.dark-feature-section,
+.proof-section {
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, 0.96), rgba(17, 24, 39, 0.78)),
+        url("../images/chose.png") center / cover;
+}
+
+.dark-feature-grid h2,
+.proof-layout h2,
+.proof-layout p {
+    color: #fff;
+}
+
+.standard-list,
+.proof-list,
+.route-list,
+.plan-timeline {
+    display: grid;
+    gap: 14px;
+}
+
+.standard-list p {
+    margin: 0;
+    padding: 18px 20px;
+    border-left: 4px solid #e50444;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-weight: 900;
+}
+
+.service-hero-board,
+.testimonial-scoreboard,
+.contact-quick-panel {
+    display: grid;
+    gap: 14px;
+    padding: 22px;
+}
+
+.service-hero-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-hero-board div,
+.testimonial-scoreboard div,
+.contact-quick-panel a {
+    min-height: 118px;
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.service-hero-board strong,
+.service-hero-board span,
+.testimonial-scoreboard strong,
+.testimonial-scoreboard span,
+.contact-quick-panel strong,
+.contact-quick-panel span {
+    display: block;
+}
+
+.service-hero-board strong,
+.contact-quick-panel strong {
+    color: #111827;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.service-hero-board span,
+.contact-quick-panel span {
+    margin-top: 6px;
+    color: #4b5563;
+    font-weight: 700;
+}
+
+.service-showcase-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.service-showcase-grid article {
+    overflow: hidden;
+}
+
+.service-showcase-grid img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.service-showcase-grid article div {
+    padding: 24px;
+}
+
+.plan-builder-section {
+    background: #111827;
+}
+
+.plan-builder-layout h2,
+.plan-builder-layout p {
+    color: #fff;
+}
+
+.plan-timeline article {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px 20px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.plan-timeline strong {
+    color: #e50444;
+    font-weight: 900;
+}
+
+.plan-timeline span {
+    color: #111827;
+    font-weight: 800;
+}
+
+.testimonial-scoreboard strong {
+    color: #e50444;
+    font-size: 44px;
+    line-height: 48px;
+    font-weight: 900;
+}
+
+.testimonial-scoreboard span {
+    color: #111827;
+    font-weight: 800;
+}
+
+.story-person {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.story-person img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #f3f4f6;
+}
+
+.story-person span {
+    display: block;
+    color: #e50444;
+    font-weight: 900;
+}
+
+.result-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.result-strip div {
+    padding: 26px;
+    border-radius: 8px;
+    background: #111827;
+    color: #fff;
+}
+
+.result-strip strong,
+.result-strip span {
+    display: block;
+}
+
+.result-strip strong {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.result-strip span {
+    margin-top: 6px;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.contact-quick-panel a {
+    text-decoration: none !important;
+}
+
+.contact-workspace {
+    align-items: stretch;
+}
+
+.contact-form-panel,
+.contact-routing-panel,
+.contact-cta-card {
+    border-radius: 8px;
+    box-shadow: 0 22px 60px rgba(17, 24, 39, 0.1);
+}
+
+.contact-form-panel {
+    padding: 36px;
+    background: #fff;
+}
+
+.contact-routing-panel {
+    padding: 36px;
+    background: #111827;
+}
+
+.contact-routing-panel .fitnex-kicker {
+    color: #fff;
+}
+
+.modern-contact-form {
+    margin-top: 24px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-grid label {
+    color: #111827;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.wide-field {
+    grid-column: 1 / -1;
+}
+
+.modern-contact-form .form_control,
+.modern-contact-form .form_cont {
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 0;
+    border: 1px solid #d9dee6;
+    border-radius: 8px;
+    background: #f8fafc;
+    color: #111827;
+    font-size: 16px;
+}
+
+.modern-contact-form .form_control {
+    height: 54px;
+    padding: 0 16px;
+}
+
+.modern-contact-form .form_cont {
+    min-height: 140px;
+    padding: 16px;
+    resize: vertical;
+}
+
+.modern-contact-form .send_btn {
+    margin-top: 22px;
+    max-width: 220px;
+    height: 58px;
+    line-height: 58px;
+    border-radius: 8px;
+    background: #e50444;
+}
+
+.modern-contact-form .send_btn:hover {
+    background: #111827;
+}
+
+.route-list article {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.route-list strong,
+.route-list span {
+    color: #fff;
+}
+
+.route-list span {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.contact-cta-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 40px;
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, 0.94), rgba(229, 4, 68, 0.64)),
+        url("../images/chose.png") center / cover;
+}
+
+.contact-cta-card h2,
+.contact-cta-card p,
+.contact-cta-card .fitnex-kicker {
+    color: #fff;
+}
+
+.contact-cta-card .read_more {
+    flex: 0 0 auto;
+    background: #fff;
+    color: #111827;
+}
+
+.contact-cta-card .read_more:hover {
+    background: #e50444;
+    color: #fff;
+}
+
+@media (max-width: 1199px) {
+    .fitnex-hero-copy h1 {
+        font-size: 48px;
+        line-height: 54px;
+    }
+
+    .service-showcase-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 991px) {
+    .fitnex-hero-grid,
+    .story-layout,
+    .plan-builder-layout,
+    .proof-layout,
+    .contact-workspace,
+    .dark-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modern-card-grid.three,
+    .story-card-grid,
+    .result-strip,
+    .fitnex-hero-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .fitnex-page-hero {
+        padding: 76px 0 58px;
+    }
+
+    .fitnex-hero-copy h1,
+    .modern-heading h2,
+    .story-copy h2,
+    .plan-builder-layout h2,
+    .proof-layout h2,
+    .contact-form-panel h2,
+    .contact-cta-card h2,
+    .dark-feature-grid h2 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .fitnex-hero-copy p {
+        font-size: 16px;
+        line-height: 27px;
+    }
+
+    .service-hero-board,
+    .service-showcase-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-cta-card,
+    .fitnex-hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .fitnex-hero-actions .read_more,
+    .contact-cta-card .read_more,
+    .modern-contact-form .send_btn {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
 
 /**  inner page css **/
 
